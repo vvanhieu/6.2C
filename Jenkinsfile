@@ -12,12 +12,27 @@ pipeline{
                 sh './Integration Test'
             }
         }
-        stage("Deploy"){
+        stage("Code Analysis"){
             steps{
                 echo "Deploying..."
             }
         }
-        stage("Complete"){
+        stage("Security Scan"){
+            steps{
+                echo "Completed..."
+            }
+        }
+        stage("Deploy to Staging"){
+            steps{
+                echo "Completed..."
+            }
+        }
+        stage("Integration Tests on Staging"){
+            steps{
+                echo "Completed..."
+            }
+        }
+        stage("Deploy to Production'"){
             steps{
                 echo "Completed..."
             }
