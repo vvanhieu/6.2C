@@ -2,20 +2,14 @@ pipeline{
     agent any
     stages{
         stage("Build"){
-            steps{
-                echo "Building ..."
+            steps {
+                sh 'mvn clean package' 
             }
-            post{ //send email
-                    success{
-                        mail to: "hieunguyen23032001@gmail.com",
-                        subject: "Build Status Email",
-                        body: "Build was successfull"
-                    }
-                }
-            }
-        stage("Test"){
+        }
+        stage("Unit and Integration Tests"){
             steps{
-                echo "Testing..."
+                sh './JUnit Test'
+                sh './Integration Test'
             }
         }
         stage("Deploy"){
