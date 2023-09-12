@@ -4,14 +4,14 @@ pipeline {
     stages {
         stage("Build") {
             steps {
-                echo  'Building project to compile and package using Maven'
+                echo  'Building project to compile and package using Maven.'
             }
         }
 
         stage("Unit and Integration Tests") {
             steps {
-                echo 'JUnit test for code function'
-                echo 'Integration Test working together'
+                echo 'JUnit test for code function.'
+                echo 'Integration Test working together.'
             }
             post{ 
                     success{
